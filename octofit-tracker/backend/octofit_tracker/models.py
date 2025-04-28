@@ -8,6 +8,7 @@ class User(models.Model):
     team = models.CharField(max_length=100, blank=True, null=True)
     class Meta:
         db_table = 'users'
+        app_label = 'octofit_tracker'
 
 class Team(models.Model):
     _id = models.ObjectIdField()
@@ -15,6 +16,7 @@ class Team(models.Model):
     members = models.JSONField(default=list)
     class Meta:
         db_table = 'teams'
+        app_label = 'octofit_tracker'
 
 class Activity(models.Model):
     _id = models.ObjectIdField()
@@ -24,6 +26,7 @@ class Activity(models.Model):
     date = models.DateField()
     class Meta:
         db_table = 'activity'
+        app_label = 'octofit_tracker'
 
 class Leaderboard(models.Model):
     _id = models.ObjectIdField()
@@ -31,6 +34,7 @@ class Leaderboard(models.Model):
     points = models.IntegerField()
     class Meta:
         db_table = 'leaderboard'
+        app_label = 'octofit_tracker'
 
 class Workout(models.Model):
     _id = models.ObjectIdField()
@@ -40,3 +44,4 @@ class Workout(models.Model):
     date = models.DateField()
     class Meta:
         db_table = 'workouts'
+        app_label = 'octofit_tracker'
